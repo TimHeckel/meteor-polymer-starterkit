@@ -1,0 +1,11 @@
+<template name="publicLayout">
+	{{#globalLayout}}
+	    <div fit layout vertical center center-justified>
+	    	{{>yield}}
+	    	<br/><br/>
+	    	<div>
+    			<a href="/login">Login</a> &middot; <a href="/signup">Sign Up</a>
+			</div>
+	    </div>
+	{{/globalLayout}}
+</template>
