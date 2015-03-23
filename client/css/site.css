@@ -1,0 +1,9 @@
+.rightMenu {
+	width: 100%;
+	font-size:80%;
+}
+
+#dashboardTabs {
+	background-color: transparent;
+	color:#333;
+}

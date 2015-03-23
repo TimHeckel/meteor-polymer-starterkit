@@ -1,7 +1,7 @@
 <template name="homeButtons">
-	<paper-input-decorator label="Email" error="Whats's your email?"
-	floatingLabel>
-		<input is="core-input" id="email" type="text" required>
+
+	<paper-input-decorator id="emailValidator" label="Email" error="This must be a valid email!" floatingLabel>
+		<input is="core-input" id="email" type="text" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" required>
 	</paper-input-decorator>
 
 	<paper-input-decorator label="Password" error="What's your password?"

@@ -14,10 +14,19 @@
 			</core-header-panel>
 			<core-header-panel mode="waterfall" main>
 				<core-toolbar class="toolbar toolbar-primary">
-					<paper-icon-button class="hidden-md narrow" icon="menu" data-action="toggle-drawer">
+
+					<paper-icon-button class="hidden-md narrow" icon="menu" 
+						data-action="toggle-drawer">
 					</paper-icon-button>
-					{{> yield "contentToolbar"}}
+
+					<div horizontal end-justified layout class="rightMenu">
+						<a href="{{pathFor route='logout'}}">
+							Sign Out
+						</a>
+					</div>
+
 				</core-toolbar>
+
 				<div class="content">
 					{{#if UI.contentBlock}}
 						{{> UI.contentBlock}}
@@ -27,6 +36,7 @@
 		        		{{/momentum}}
 					{{/if}}
 				</div>
+
 			</core-header-panel>
 		</core-drawer-panel>
 	{{/globalLayout}}

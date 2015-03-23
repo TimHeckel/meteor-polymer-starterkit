@@ -1,3 +1,20 @@
+
+Template.dashboard.created = function() {
+	Session.set("__selectedTabIndex", 0);
+}
+
+Template.dashboard.rendered = function() {
+	var tabs = document.querySelector("#dashboardTabs");
+	//firing twice is normal for now
+	//http://stackoverflow.com/questions/24474020/how-does-core-selectors-core-select-event-work
+	tabs.addEventListener('core-select', function(e) {
+		console.log("selected...", arguments);
+		if (e.detail.isSelected) {
+			Session.set("__selectedTabIndex", tabs.selected);
+		}
+	});
+};
+
 Template.dashboard.events({
 	"click core-animated-pages": function(e) {
 		var up = true;
@@ -11,5 +28,11 @@ Template.dashboard.events({
 		} else {
 			p.selected -= 1;
 		}
+	}
+});
+
+Template.dashboard.helpers({
+	selected: function() {
+		return Session.get("__selectedTabIndex");
 	}
 });

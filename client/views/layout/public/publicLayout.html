@@ -4,7 +4,8 @@
 	    	{{>yield}}
 	    	<br/><br/>
 	    	<div>
-    			<a href="/login">Login</a> &middot; <a href="/signup">Sign Up</a>
+    			<a href="{{pathFor route='login'}}">Login</a> &middot; 
+    			<a href="{{pathFor route='signup'}}">Sign Up</a>
 			</div>
 	    </div>
 	{{/globalLayout}}
