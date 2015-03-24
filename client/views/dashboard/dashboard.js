@@ -13,6 +13,25 @@ Template.dashboard.rendered = function() {
 			Session.set("__selectedTabIndex", tabs.selected);
 		}
 	});
+
+	var _txt = document.querySelector("#txtReactive");
+
+	_txt.addEventListener("keyup", function(e) {
+		console.log("typing ", e.target.value);
+		ReactiveText.update({ _id: "reactive" }, { $set: { text: e.target.value } });
+	});
+
+	this.autorun(function() {
+		ReactiveText.find({ _id: "reactive" }).observe({
+			added: function(doc) {
+				_txt.value = doc.text;
+			}
+			, changed: function(doc) {
+				_txt.value = doc.text;
+			}
+		});
+	});
+
 };
 
 Template.dashboard.events({
@@ -34,5 +53,8 @@ Template.dashboard.events({
 Template.dashboard.helpers({
 	selected: function() {
 		return Session.get("__selectedTabIndex");
+	}
+	, val: function() {
+		return ReactiveText.find()
 	}
 });
