@@ -1,4 +1,5 @@
 <template name="dashboard">
+
 	<div fit>
 	  	<paper-tabs id="dashboardTabs" selected="{{selected}}">
 	  		<paper-tab>Reactive Example</paper-tab>
@@ -7,15 +8,17 @@
 		</paper-tabs>
 
 		<core-pages selected="{{selected}}">
+
 			<div>
 				<!-- page 1 -->
 				<h3>Below is an autogrowing textarea</h3>
 				<p>Any logged-in user can edit!</p>
-				<paper-input-decorator label="Autogrowing Textarea">
+				<paper-input-decorator label="Collaboratively Edit...">
 		      		<paper-autogrow-textarea>
-			        	<textarea></textarea>
+			        	<textarea id="collab"></textarea>
 			      	</paper-autogrow-textarea>
 			    </paper-input-decorator>
+			    <paper-char-counter class="counter" target="collab"></paper-char-counter>
 			</div>
 
 			<div> 
@@ -69,13 +72,6 @@
 				<!-- page 2 -->
 				
 				<h4>Standalone</h4>
-			    <paper-input label="label"></paper-input>
-				<paper-input label="floating label" floatingLabel></paper-input>
-				<paper-input label="disabled" disabled></paper-input>
-
-				<hr/>
-				  
-			  	<h4>Decorator</h4>
 			  	<paper-input-decorator label="with core-input">
 		      		<input is="core-input">
 			    </paper-input-decorator>
@@ -101,14 +97,6 @@
 			    <h4>Auto-Validation</h4>
 		    	<paper-input-decorator label="required" floatingLabel error="input is required!" autoValidate>
 		      		<input is="core-input" required>
-			    </paper-input-decorator>
-
-				<hr/>
-
-				<h4>Custom styling</h4>
-				<paper-input class="custom" label="paper-input"></paper-input>
-				<paper-input-decorator class="custom" label="decorator">
-		      		<input is="core-input">
 			    </paper-input-decorator>
 
 			</div>

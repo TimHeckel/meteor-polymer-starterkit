@@ -5,3 +5,9 @@ Template.dashboardLayout.helpers({
 	  	}
   	}
 });
+
+Template.dashboardLayout.events({
+	"click [data-action=toggle-drawer]": function(e) {
+		$("[data-drawer-panel]")[0].togglePanel();
+	}
+});
