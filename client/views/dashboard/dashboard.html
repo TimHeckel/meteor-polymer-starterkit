@@ -1,6 +1,6 @@
 <template name="dashboard">
 
-	<div fit>
+	<div fit class="page">
 	  	<paper-tabs id="dashboardTabs" selected="{{selected}}">
 	  		<paper-tab>Reactive Example</paper-tab>
 			<paper-tab>Button Examples</paper-tab>
@@ -14,11 +14,11 @@
 				<h3>Below is an autogrowing textarea</h3>
 				<p>Any logged-in user can edit!</p>
 				<paper-input-decorator label="Collaboratively Edit...">
-		      		<paper-autogrow-textarea>
-			        	<textarea id="collab"></textarea>
+		      		<paper-autogrow-textarea id="collabAutogrow">
+			        	<textarea id="txtReactive"></textarea>
 			      	</paper-autogrow-textarea>
 			    </paper-input-decorator>
-			    <paper-char-counter class="counter" target="collab"></paper-char-counter>
+			    <paper-char-counter class="counter" target="txtReactive"></paper-char-counter>
 			</div>
 
 			<div> 

@@ -11,3 +11,22 @@
 textarea, input {
 	width:90%;
 }
+
+core-header-panel[drawer] {
+	background-color: #000;
+	border-right:1px solid #ddd;
+	margin-right:4px;
+}
+
+.widget {
+	padding:5px;
+}
+
+.delWidget {
+	cursor: pointer;
+}
+
+.page {
+	padding-left:10px;
+	padding-right:10px;
+}

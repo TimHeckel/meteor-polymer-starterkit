@@ -1,0 +1,41 @@
+<template name="widgets">
+
+	<div fit class="page">
+
+		<h3>Behold the widgetry</h3>
+		
+		<paper-input-decorator id="nameDescriptor" label="Widget name" error="I need a name, son." floatingLabel>
+			<input is="core-input" id="txtName" type="text" required>
+		</paper-input-decorator>
+
+		<paper-input-decorator id="descriptDecorator" label="Widget description" error="What's up?" floatingLabel>
+			<input is="core-input" id="txtDescription" type="text" required>
+		</paper-input-decorator>
+
+		<div horizontal layout reverse>
+			<paper-fab type="submit" id="btnAddWidget" icon="add" raised></paper-fab>
+		</div>
+
+		<br/><br/>
+
+		<div layout wrap horizontal>
+			{{#each widget}}
+				<div class="widget">
+					<paper-shadow class="card widget" z="5">
+						<div layout horizontal>
+							<div>
+								<core-icon class="delWidget" icon="delete" data-id="{{_id}}"></core-icon>
+							</div>
+							<div>
+								<h4>{{name}}</h4>
+								<small><i>{{description}}</i></small>
+							</div>
+						</div>
+				    </paper-shadow>
+				</div>
+			{{/each}}
+		</div>
+
+	</div>
+
+</template>
