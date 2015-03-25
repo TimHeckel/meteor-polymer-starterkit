@@ -1,0 +1,23 @@
+<polymer-element name="my-counter" attributes="counter">
+  <template>
+    <style> 
+      .counterBox { padding:5px; margin:10px; }
+      button { padding: 10px; cursor: pointer; }
+    </style>
+    <div class="counterBox">
+      <div id="label"><content></content></div>
+      Value: <span id="counterVal">{{counter}}</span> &nbsp; <button on-tap="{{increment}}">Increment</button>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      counter: 0, // Default value
+      counterChanged: function() {
+        this.$.counterVal.classList.add('highlight');
+      },
+      increment: function() {
+        this.counter++;
+      }
+    });
+  </script>
+</polymer-element>

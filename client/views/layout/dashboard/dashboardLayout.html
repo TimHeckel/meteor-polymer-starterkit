@@ -24,7 +24,18 @@
 						data-action="toggle-drawer">
 					</paper-icon-button>
 
+					<paper-dropdown-menu id="ddlTheme" label="Theme..." style="width:200px">
+					    <paper-dropdown class="dropdown">
+					        <core-menu class="menu">
+					        	{{#each theme}}
+					            	<paper-item data-src="{{src}}">{{name}}</paper-item>
+				            	{{/each}}
+					        </core-menu>
+					    </paper-dropdown>
+					</paper-dropdown-menu>
+
 					<div horizontal end-justified layout class="rightMenu">
+
 						<a href="{{pathFor route='logout'}}">
 							Sign Out
 						</a>
